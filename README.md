@@ -2,11 +2,11 @@
 
 > 🍻 a minimalist personal site with some style and serious nonsense
 
-[![Go to mingze-gao.com](https://mingze-gao.com/favicon.png)](https://mingze-gao.com)
+[!Go to wanying.website](https://wanyingling.github.io/)
 
 ## 🚀 Project Structure
 
-This site is build with [Astro](https://astro.build) with the following structure:
+This site is referenced from [Mingze Gao's website](https://mingze-gao.com), and  is build with [Astro](https://astro.build) with the following structure:
 
 ```text
 ├── public/
