@@ -1,16 +1,14 @@
-name: Github Pages Astro CI
+name: Deploy to GitHub Pages
 
 on:
-  # Schedule to update site stats daily at 00:05
-  schedule:
-    - cron: '5 0 * * *'
-  # Trigger the workflow every time you push to the `main` branch
+  # 每次推送到 `main` 分支时触发这个“工作流程”
+  # 如果你使用了别的分支名，请按需将 `main` 替换成你的分支名
   push:
-    branches: [main]
-  # Allows you to run this workflow manually from the Actions tab on GitHub.
+    branches: [ main ]
+  # 允许你在 GitHub 上的 Actions 标签中手动触发此“工作流程”
   workflow_dispatch:
 
-# Allow this job to clone the repo and create a page deployment
+# 允许 job 克隆 repo 并创建一个 page deployment
 permissions:
   contents: read
   pages: write
@@ -21,20 +19,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout your repository using git
-        uses: actions/checkout@v2
-      - name: Setup Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.10'
-      - name: Inject site stats from Google Analytics V4 API
-        env:
-          GOOGLE_CLIENT_SECRETS_BASE64: ${{ secrets.GOOGLE_CLIENT_SECRETS_BASE64 }}
-          GOOGLE_PROPERTY_ID: ${{ secrets.GOOGLE_PROPERTY_ID }}
-        run: |
-          pip install google-analytics-data
-          python scripts/add_site_stats.py
+        uses: actions/checkout@v3
       - name: Install, build, and upload your site
         uses: withastro/action@v0
+        # with:
+            # path: . # 存储库中 Astro 项目的根位置。（可选）
+            # node-version: 16 # 用于构建站点的特定 Node.js 版本，默认为 16。（可选）
+            # package-manager: yarn # 应使用哪个 Node.js 包管理器来安装依赖项和构建站点。会根据存储库中的 lockfile 自动检测。（可选）
 
   deploy:
     needs: build
