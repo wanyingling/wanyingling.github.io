@@ -1,7 +1,7 @@
 // Place any global data in this file.
 // You can import this data from anywhere in your site by using the `import` keyword.
 
-export const SITE_TITLE = 'Wanying Ling'
+export const SITE_TITLE = 'Wanying Ling (She/Her/Hers)'
 export const SITE_DESCRIPTION = "Wanying Ling's personal website!"
 export const SITE_IMAGE = '/wanying.jpg'
 export const SITE_FAVICON = '/favicon.png'
