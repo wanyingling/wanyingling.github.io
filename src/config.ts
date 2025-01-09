@@ -6,3 +6,4 @@ export const SITE_DESCRIPTION = "Wanying Ling's personal website!"
 export const SITE_IMAGE = '/wanying.jpg'
 export const SITE_FAVICON = '/favicon.png'
 export const CV_PATH = '/cv.pdf'
+export const RESEARCH_SUM_PATH = '/research-summary.png'
