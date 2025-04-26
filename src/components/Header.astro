@@ -1,0 +1,29 @@
+---
+import HeaderLink from './HeaderLink.astro'
+import { SITE_TITLE } from '../config'
+---
+
+<header>
+  <h1 class="font-bold text-lg">
+    {SITE_TITLE}
+  </h1>
+  <nav>
+    <HeaderLink href="/">Home</HeaderLink>
+    <HeaderLink href="/cv">CV</HeaderLink>
+    <HeaderLink href="/research">Research</HeaderLink>
+    <HeaderLink href="/about">About</HeaderLink>
+    <HeaderLink href="/关于我">关于我</HeaderLink>
+    <HeaderLink href="/简历">简历</HeaderLink>
+    <!-- <HeaderLink href="https://github.com/wanyingling" target="_blank"
+      >GitHub</HeaderLink
+    > -->
+  </nav>
+</header>
+<style>
+  header {
+    margin: 0em 0 2em;
+  }
+  h1 {
+    margin: 0.5em 0;
+  }
+</style>
