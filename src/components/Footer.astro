@@ -1,0 +1,31 @@
+---
+const today = new Date()
+---
+
+<footer>
+  &copy; {today.getFullYear()}
+  <a href="/" class="text-[#444]">Wanying Ling</a>. All rights reserved.
+</footer>
+<style>
+  footer {
+    @apply text-sm;
+    padding: 25px;
+    text-align: center;
+  }
+</style>
+<script is:inline>
+  console.log(`
+Wanying Ling
+`)
+  console.log('Welcome to my site :)')
+
+  // enable checkboxes on readingi list;
+  if (window.location.href.indexOf('reading-list') > -1) {
+    var inputs = document.getElementsByTagName('input')
+    for (var i = 0; i < inputs.length; i++) {
+      if (inputs[i].type.toLowerCase() == 'checkbox') {
+        inputs[i].disabled = false
+      }
+    }
+  }
+</script>
